@@ -5,5 +5,6 @@ import (
 )
 
 func main() {
+	utils.CreateVcsDir()
 	utils.Interaction()
 }
