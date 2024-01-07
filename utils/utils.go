@@ -1,24 +1,24 @@
-package main
+package utils
 
 import (
 	"fmt"
 	"log"
 	"os"
+	"version_control_go/common"
 )
 
-func Stage1() {
-	command := cmdRead()
-	if description, exists := Commands[command]; exists {
+func Interaction() {
+	command := CmdRead()
+	if description, exists := common.Commands[command]; exists {
 		fmt.Println(description)
 	} else if command == "--help" {
-		fmt.Print(HELP_MESSAGE)
+		fmt.Print(common.HELP_MESSAGE)
 	} else {
 		fmt.Printf("'%v' is not a SVCS command.\n", command)
 	}
-
 }
 
-func cmdRead() string {
+func CmdRead() string {
 	// config := flag.String("name", "", Commands["config"])
 	// add := flag.String("add", "", Commands["add"])
 	// log := flag.String("log", "", Commands["log"])
